@@ -18,30 +18,14 @@ import Layout from '../components/Layout';
 const ContactPage: NextPage = () => {
   return (
     <Layout>
-      <Flex
-        mx={[2, 4, 8, 12, 24, 96]}
-        mt={16}
-        flexDirection="column"
-      >
-        <Box
-          d="flex"
-          alignItems="center"
-          flexDirection="column"
-        >
+      <Flex mx={[2, 4, 8, 12, 24, 96]} mt={16} flexDirection="column">
+        <Box d="flex" alignItems="center" flexDirection="column">
           <Heading fontSize="3xl">
-            You want to make an appointment or
-            book a coaching session?
+            You want to make an appointment or book a coaching session?
           </Heading>
-          <Text mt="4">
-            You can e-mail me or contact me by
-            phone.
-          </Text>
+          <Text mt="4">You can e-mail me or contact me by phone.</Text>
         </Box>
-        <Box
-          d="flex"
-          justifyContent="space-around"
-          mt="4"
-        >
+        <Box d="flex" justifyContent="space-around" mt="4">
           <Box d="flex" alignItems="center">
             <FiPhone size="28" />
 
@@ -58,8 +42,7 @@ const ContactPage: NextPage = () => {
           </Box>
         </Box>
         <Text mx="auto" mt="4">
-          You can also complete contact form below
-          to get in touch with me.
+          You can also complete contact form below to get in touch with me.
         </Text>
         <Box mt="4" mx={[2, 4, 8, 16, 64]}>
           <Formik
@@ -79,14 +62,11 @@ const ContactPage: NextPage = () => {
             //   }
             //   throw errors;
             // }}
-            onSubmit={async (
-              values,
-              { resetForm }
-            ) => {
+            onSubmit={async (values, { resetForm }) => {
               console.log(values);
               try {
                 const response = await axios.post(
-                  'http://localhost:4000/api/contacts',
+                  'https://server-mediation.herokuapp.com/api/contacts',
                   {
                     email: values.email,
                     content: values.wiadomosc,
@@ -121,13 +101,8 @@ const ContactPage: NextPage = () => {
                   onChange={handleChange}
                   value={values.email}
                 />
-                <Text
-                  color="red.500"
-                  fontSize="small"
-                >
-                  {errors.email &&
-                    touched.email &&
-                    errors.email}
+                <Text color="red.500" fontSize="small">
+                  {errors.email && touched.email && errors.email}
                 </Text>
                 <Textarea
                   placeholder="Tresc wiadomosci"

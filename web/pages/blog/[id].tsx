@@ -25,7 +25,7 @@ const SinglePost: NextPage = () => {
     const fetching = async () => {
       if (router.query.id) {
         const response = await axios.get(
-          `http://localhost:4000/api/blogs/${router.query.id}`
+          `https://server-mediation.herokuapp.com/api/blogs/${router.query.id}`
         );
         setData(response.data);
       }

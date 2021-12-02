@@ -18,7 +18,9 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState<blogProps[] | undefined>();
   useEffect(() => {
     const fetching = async () => {
-      const response = await axios.get('http://localhost:4000/api/blogs');
+      const response = await axios.get(
+        'https://server-mediation.herokuapp.com/api/blogs'
+      );
       setBlogs(response.data);
     };
     fetching();
