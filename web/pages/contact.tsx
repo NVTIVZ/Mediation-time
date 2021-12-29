@@ -63,7 +63,6 @@ const ContactPage: NextPage = () => {
             //   throw errors;
             // }}
             onSubmit={async (values, { resetForm }) => {
-              console.log(values);
               try {
                 const response = await axios.post(
                   'https://server-mediation.herokuapp.com/api/contacts',
@@ -73,7 +72,7 @@ const ContactPage: NextPage = () => {
                     name: values.imie,
                   }
                 );
-                console.log(response);
+
                 resetForm({});
               } catch {}
             }}

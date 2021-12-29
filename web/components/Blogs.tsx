@@ -25,12 +25,11 @@ const Blogs = () => {
     };
     fetching();
   }, []);
-  console.log(blogs);
   const renderBlogs = () => {
     if (blogs) {
       return blogs.map((blog: any, index: number) => {
         const czas = new Date(blog.date).toLocaleDateString();
-        console.log(blog);
+
         return (
           <SlideFade
             in={true}
@@ -69,7 +68,6 @@ const Blogs = () => {
     }
   };
 
-  console.log(blogs);
   return (
     <Flex
       mx={[2, 4, 12, 24, 96]}

@@ -6,7 +6,6 @@ import { useRouter } from 'next/dist/client/router';
 import { useEffect, useState } from 'react';
 import Layout from '../../components/Layout';
 import NextLink from 'next/link';
-import { Image } from '@chakra-ui/image';
 
 interface dataProps {
   short: string;
@@ -19,7 +18,6 @@ interface dataProps {
 
 const SinglePost: NextPage = () => {
   const router = useRouter();
-  console.log(router.query.id);
   const [data, setData] = useState<dataProps | null>();
   useEffect(() => {
     const fetching = async () => {
@@ -33,7 +31,6 @@ const SinglePost: NextPage = () => {
     fetching();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router]);
-  console.log(data);
 
   return (
     <Layout>
