@@ -65,7 +65,7 @@ const ContactPage: NextPage = () => {
             onSubmit={async (values, { resetForm }) => {
               try {
                 const response = await axios.post(
-                  'https://server-mediation.herokuapp.com/api/contacts',
+                  'http://localhost:4000/api/contacts',
                   {
                     email: values.email,
                     content: values.wiadomosc,
