@@ -7,8 +7,8 @@ const About = () => {
   return (
     <Layout>
       <Grid
-        templateColumns={['repeat(1,1fr)', 'repeat(2,1fr)']}
-        mx={[2, 96]}
+        templateColumns={['repeat(1,1fr)', 'repeat(1,1fr)', 'repeat(2,1fr)']}
+        mx={[2, 4, 8, 24, 48, 64]}
         mt={16}
         id="o-mnie"
         mb={4}
@@ -63,7 +63,7 @@ const About = () => {
             transition={{ enter: { duration: 1 } }}
             unmountOnExit={true}
           >
-            <Image src="/images/about.jpg" alt="me" mx={4} />
+            <Image src="/images/about.jpg" alt="me" mx={4} width={[300, 500]} />
           </SlideFade>
         </Box>
       </Grid>

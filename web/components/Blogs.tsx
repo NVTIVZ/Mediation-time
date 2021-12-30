@@ -39,14 +39,19 @@ const Blogs = () => {
           >
             <Box
               key={blog._id}
-              height={48}
               d="flex"
+              flexDirection={['column', 'row']}
               background="gray.200"
               width="100%"
               borderRadius="xl"
               mt={10}
             >
-              <Image src={blog.image} alt={blog.title} borderStartRadius="lg" />
+              <Image
+                src={blog.image}
+                alt={blog.title}
+                borderStartRadius="lg"
+                height={48}
+              />
               <Box d="flex" flexDirection="column" ml={4} mt={2}>
                 <Heading fontSize="2xl">{blog.title}</Heading>
                 <Text mt="2">{blog.short}</Text>
@@ -68,7 +73,7 @@ const Blogs = () => {
 
   return (
     <Flex
-      mx={[2, 4, 12, 24, 96]}
+      mx={['auto', 4, 8, 24, 48, 64]}
       mt={8}
       wrap="wrap"
       mb="4"

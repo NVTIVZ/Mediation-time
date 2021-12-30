@@ -13,7 +13,7 @@ import Layout from './Layout';
 const Consultation = (props: any) => {
   return (
     <Layout>
-      <Flex flexDirection="column" mx={[2, 96]}>
+      <Flex flexDirection="column" mx={[2, 4, 8, 24, 48, 64]}>
         <Heading mx="auto" mt={4}>
           {props.title}
         </Heading>
@@ -30,10 +30,10 @@ const Consultation = (props: any) => {
               facilisis nisl, non lacinia nunc. Etiam efficitur malesuada leo eu
               eleifend. Nulla facilisi.
             </Text>
-            <Heading mt="auto" bgColor="gray.100">
+            <Heading mt="auto" bgColor="gray.200">
               What can i offer:
             </Heading>
-            <UnorderedList pl={12} ml={0} bgColor="gray.100">
+            <UnorderedList pl={12} ml={0} bgColor="gray.200">
               <ListItem>
                 Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
                 ipsum dolor sit amet Lorem ipsum dolor sit amet
@@ -49,7 +49,12 @@ const Consultation = (props: any) => {
               </ListItem>
             </UnorderedList>
           </Flex>
-          <Image src={props.image} alt="family" maxWidth={450} />
+          <Image
+            src={props.image}
+            alt="family"
+            maxWidth={[355, 450]}
+            mx="auto"
+          />
         </Grid>
       </Flex>
     </Layout>
